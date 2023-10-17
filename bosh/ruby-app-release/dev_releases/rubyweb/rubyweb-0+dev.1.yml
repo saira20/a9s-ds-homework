@@ -1,0 +1,23 @@
+name: rubyweb
+version: 0+dev.1
+commit_hash: 6ca7160
+uncommitted_changes: true
+jobs:
+- name: rubyweb
+  version: 49caa533707e9cc81fa02d59df77403b6d1fc9d6dc1347e40514e4888ba40beb
+  fingerprint: 49caa533707e9cc81fa02d59df77403b6d1fc9d6dc1347e40514e4888ba40beb
+  sha1: sha256:7af83abab380c4875cf2f0b30b1eebfad032483e8afe325e0a1373c0591d32ea
+  packages:
+  - ruby-2.7
+packages:
+- name: ruby-2.7
+  version: efa5b03ea4036a17c9b38e9bf36322ece6624879f8f64437bc8d1fc68ca87de3
+  fingerprint: efa5b03ea4036a17c9b38e9bf36322ece6624879f8f64437bc8d1fc68ca87de3
+  sha1: sha256:f78a028d7f79581e9b54d35270074345c65bff5bca932bf1ee09696d1ad63ef5
+  dependencies: []
+- name: rubyweb
+  version: 6678ffa577d284e5ad03e18e4010cfd900a897da8c02863dc336478f1c4f096b
+  fingerprint: 6678ffa577d284e5ad03e18e4010cfd900a897da8c02863dc336478f1c4f096b
+  sha1: sha256:299f12de54ab541a5c44fc695f65ee9d3c7276ba1048053a59cd321660a3d0e7
+  dependencies:
+  - ruby-2.7

@@ -1,4 +1,6 @@
+name: rubyweb
+
 blobstore:
   provider: local
   options:
-    blobstore_path: /tmp/ruby-app-release-blobs
+    blobstore_path: tmp/ruby-app-release-blobs

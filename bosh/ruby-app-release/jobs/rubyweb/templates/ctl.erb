@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e -x
 
 RUN_DIR=/var/vcap/sys/run/rubyweb
@@ -19,18 +21,28 @@ case $1 in
     <%= 
     
       start_file = p('bootstrap')
-      if not start_file.empty?
+      if  start_file.empty?
         raise 'No bootstrap file provided'
+      elsif not start_file.eql? "app.rb"
+        raise 'Wrong bootstrap file provided'
       end
 
     %>
-    bundle exec ruby <%= start_file unless start_file.eql? "app.rb" %> \
+    bundle exec ruby <%= start_file unless not start_file.eql? "app.rb" %> \
       >>  $LOG_DIR/rubyweb.stdout.log \
       2>> $LOG_DIR/rubyweb.stderr.log
-    ;;
 
+  ;;
+  
+  stop)
+    if [[ -e $PIDFILE ]]; then
+      kill -9 `cat $PIDFILE`
+      rm  $PIDFILE
+    fi
+  ;;
+    
   *)
     echo "Usage: ctl {start|stop}"
-
+  ;;
 esac
 
